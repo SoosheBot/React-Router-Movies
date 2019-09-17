@@ -6,7 +6,6 @@ import Movie from './Movies/Movie';
 
 
 
-
 const App = () => {
   const [savedList, setSavedList] = useState( [] );
 
@@ -17,8 +16,8 @@ const App = () => {
   return (
     <div>
       <SavedList list={savedList} />
-      <Route exact path='/'/>
-      <Route path='/movies/id'/>
+      <Route exact path='/' render={() => <MovieList />} />
+      <Route path='/movies/:id'render={() => <Movie />}/>
     </div>
   );
 };
